@@ -11,6 +11,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.autograd import Variable
 from torchvision.utils import save_image
+import soundfile as sf 
 
 from data_loader import TestSet
 from model import Discriminator, Generator
@@ -130,6 +131,10 @@ class Solver(object):
         for i in range(start_iters, self.num_iters):
             try:
                 x_real, speaker_idx_org, label_org = next(data_iter)
+                print(x_real)
+                print(speaker_idx_org)
+                print(label_org)
+
             except:
                 data_iter = iter(self.data_loader)
                 x_real, speaker_idx_org, label_org = next(data_iter)    
@@ -317,7 +322,7 @@ class Solver(object):
                         name = f'{speaker}-{target}_iter{i + 1}_{filename}'
                         path = os.path.join(self.sample_dir, name)
                         print(f'[SAVE]: {path}')
-                        librosa.output.write_wav(path, wav, self.sample_rate)
+                        sf.write(path, wav, self.sample_rate)
                         
             # Save model checkpoints.
             if (i + 1) % self.model_save_step == 0:
@@ -420,4 +425,4 @@ class Solver(object):
                     name = f'{speaker}-{target}_iter{self.test_iters}_{filename}'
                     path = os.path.join(self.result_dir, name)
                     print(f'[SAVE]: {path}')
-                    librosa.output.write_wav(path, wav, self.sample_rate)            
+                    sf.write(path, wav, self.sample_rate)            

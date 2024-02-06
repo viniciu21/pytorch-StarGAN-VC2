@@ -45,8 +45,8 @@ if __name__ == '__main__':
     parser.add_argument('--lambda_id', type=float, default=5, help='Weight of identity loss.')
     
     parser.add_argument('--batch_size', type=int, default=8, help='Mini-batch size.')
-    parser.add_argument('--num_iters', type=int, default=100000, help='Number of total iterations for training discriminator.')
-    parser.add_argument('--num_iters_decay', type=int, default=100000, help='Number of iterations for decaying learning rate.')
+    parser.add_argument('--num_iters', type=int, default=1, help='Number of total iterations for training discriminator.')
+    parser.add_argument('--num_iters_decay', type=int, default=1, help='Number of iterations for decaying learning rate.')
     parser.add_argument('--g_lr', type=float, default=0.0002, help='Learning rate of generator.')
     parser.add_argument('--d_lr', type=float, default=0.0001, help='Learning rate of discriminator.')
     parser.add_argument('--n_critic', type=int, default=5, help='Number of epochs discriminator update for one generator update.')
