@@ -129,7 +129,7 @@ if __name__ == "__main__":
     if argv.dataset == 'VCC2016':
         sample_rate = 16000
     else:
-        sample_rate = 22050
+        sample_rate = 16000
 
     wav_to_mcep_file(input_dir, sample_rate, processed_filepath=output_dir)
 

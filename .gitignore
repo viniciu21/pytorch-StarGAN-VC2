@@ -1,6 +1,5 @@
 */.vscode/*
 */__pycache__/*
-*/data/*
 */etc/*
 */logs/*
 */models/*
@@ -10,10 +9,10 @@ __MACOSX/*
 */evaluation_all/*
 */processed/*
 */__pycache__/*
-*/spk/*
-*/spk_test/*
+
 */vcc2016_training/*
 etc/*
 *.zip
 __pycache__/*
-data/*
+dir_16kHz/*
+dir_16kHz

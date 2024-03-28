@@ -27,7 +27,7 @@ class Solver(object):
         if config.dataset == 'VCC2016':
             self.sample_rate = 16000
         else:
-            self.sample_rate = 22050
+            self.sample_rate = 16000
        
         self.lambda_cyc = config.lambda_cyc
         self.lambda_gp = config.lambda_gp
